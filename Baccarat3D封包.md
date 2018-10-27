@@ -10,15 +10,15 @@ Baccarat3D 封包
 		- Money int // 玩家的錢
 0. **一局開始**
 	- G2CBaccarat3DRoundStart // 廣播
-		- RoundCode string //局號
+		- RoundCode string // 局號
 0. **押注輪開始**
 	- G2CBaccarat3DBetRoundStart // 廣播
-		- RoundCode string //局號
+		- RoundCode string // 局號
 0. **發送押注**
 	- C2GBaccarat3DBet
-		- Bets int[5] // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
+		- Bets [5]int // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
 	- G2CBaccarat3DBet // 成功則廣播
-		- Bets int[5] // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
+		- Bets [5]int // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
 		- SeatID int // 座位 ID
 		- Result int // 結果
 0. **確認押注**
@@ -29,7 +29,7 @@ Baccarat3D 封包
 0. **閒家發牌咪牌或開牌**
 	- G2CBaccarat3DPlayerDealPeek // 廣播
 		- PeekSeatID int // 咪牌的座位 ID, 0: 荷官咪牌
-		- CardID int[2] // 閒家的兩張牌的 ID
+		- CardID [2]int // 閒家的兩張牌的 ID
 		- PeekSecs int // 咪牌秒數
 0. **閒家發牌咪牌過程**
 	- C2GBaccarat3DPlayerDealPeekProgress
@@ -43,7 +43,7 @@ Baccarat3D 封包
 0. **莊家發牌咪牌或開牌**
 	- G2CBaccarat3DBankerDealPeek // 廣播
 		- PeekSeatID int // 咪牌的座位 ID, 0: 荷官咪牌
-		- CardID int[2] // 莊家的兩張牌的 ID
+		- CardID [2]int // 莊家的兩張牌的 ID
 		- PeekSecs int // 咪牌秒數
 0. **莊家發牌咪牌過程**
 	- C2GBaccarat3DBankerDealPeekProgress
@@ -57,7 +57,7 @@ Baccarat3D 封包
 0. **閒家補牌咪牌或開牌**
 	- G2CBaccarat3DPlayerCallPeek // 廣播
 		- PeekSeatID int // 咪牌的座位 ID, 0: 荷官咪牌
-		- CardID int[2] // 閒家的第三牌的 ID
+		- CardID [2]int // 閒家的第三牌的 ID
 		- PeekSecs int // 咪牌秒數
 0. **閒家補牌咪牌過程**
 	- C2GBaccarat3DPlayerCallPeekProgress
@@ -71,7 +71,7 @@ Baccarat3D 封包
 0. **莊家補牌咪牌或開牌**
 	- G2CBaccarat3DBankerCallPeek // 廣播
 		- PeekSeatID int // 咪牌的座位 ID, 0: 荷官咪牌
-		- CardID int[2] // 莊家的第三牌的 ID
+		- CardID [2]int // 莊家的第三牌的 ID
 		- PeekSecs int // 咪牌秒數
 0. **莊家補牌咪牌過程**
 	- C2GBaccarat3DBankerCallPeekProgress
