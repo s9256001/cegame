@@ -59,13 +59,13 @@ Baccarat3D 封包
 0. **閒家補牌咪牌或開牌**
 	- G2CBaccarat3DPlayerCallPeek // 廣播
 		- PeekSeatID int // 咪牌的座位 ID, 0: 荷官咪牌
-		- CardID [2]int // 閒家的第三牌的 ID
+		- CardKind int // 閒家的第三牌的花色, 0: 黑桃, 1: 紅心, 2: 梅花, 3: 方塊
+		- CardValue int // 閒家的第三牌的牌值, 1: A, 2: 2, ..., 10: T, ..., 13: K
 		- PeekSecs int // 咪牌秒數
 0. **閒家補牌咪牌過程**
 	- C2GBaccarat3DPlayerCallPeekProgress
 		- Info string // client 自定的夾帶訊息
 	- G2CBaccarat3DPlayerCallPeekProgress // 廣播給其他人
-		- PeekSeatID int // 咪牌的座位 ID
 		- Info string // client 自定的夾帶訊息
 0. **閒家補牌咪牌結束**
 	- C2GBaccarat3DPlayerCallPeekEnd
@@ -73,13 +73,13 @@ Baccarat3D 封包
 0. **莊家補牌咪牌或開牌**
 	- G2CBaccarat3DBankerCallPeek // 廣播
 		- PeekSeatID int // 咪牌的座位 ID, 0: 荷官咪牌
-		- CardID [2]int // 莊家的第三牌的 ID
+		- CardKind int // 莊家的第三牌的花色, 0: 黑桃, 1: 紅心, 2: 梅花, 3: 方塊
+		- CardValue int // 莊家的第三牌的牌值, 1: A, 2: 2, ..., 10: T, ..., 13: K
 		- PeekSecs int // 咪牌秒數
 0. **莊家補牌咪牌過程**
 	- C2GBaccarat3DBankerCallPeekProgress
 		- Info string // client 自定的夾帶訊息
 	- G2CBaccarat3DBankerCallPeekProgress // 廣播給其他人
-		- PeekSeatID int // 咪牌的座位 ID
 		- Info string // client 自定的夾帶訊息
 0. **莊家補牌咪牌結束**
 	- C2GBaccarat3DBankerCallPeekEnd
