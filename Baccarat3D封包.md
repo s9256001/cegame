@@ -23,13 +23,16 @@ Baccarat3D 封包
 		- Result int // 結果
 0. **確認押注**
 	- C2GBaccarat3DConfirmBet
-		- Money int // 玩家的錢
 0. **開始發牌**
 	- G2CBaccarat3DDeal // 廣播
+0. **更新押注後的錢**
+	- G2CBaccarat3DUpdateMoneyForBet // 廣播/押注 Lag 時更新該玩家的錢
+		- Money int // 玩家的錢
 0. **閒家發牌咪牌或開牌**
 	- G2CBaccarat3DPlayerDealPeek // 廣播
 		- PeekSeatID int // 咪牌的座位 ID, 0: 荷官咪牌
-		- CardID [2]int // 閒家的兩張牌的 ID
+		- CardKind [2]int // 閒家的兩張牌的花色, 0: 黑桃, 1: 紅心, 2: 梅花, 3: 方塊
+		- CardValue [2]int // 閒家的兩張牌的牌值, 1: A, 2: 2, ..., 10: T, ..., 13: K
 		- PeekSecs int // 咪牌秒數
 0. **閒家發牌咪牌過程**
 	- C2GBaccarat3DPlayerDealPeekProgress
