@@ -34,8 +34,7 @@ Baccarat3D 封包
 0. **閒家發牌咪牌或開牌**
 	- G2CBaccarat3DPlayerDealPeek // 廣播
 		- PeekSeatID int // 咪牌的座位 ID, 0: 荷官咪牌
-		- CardKind [2]int // 閒家的兩張牌的花色, 0: 黑桃, 1: 紅心, 2: 梅花, 3: 方塊
-		- CardValue [2]int // 閒家的兩張牌的牌值, 1: A, 2: 2, ..., 10: T, ..., 13: K
+		- CardIDs [2]int // 閒家的兩張牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
 		- PeekSecs int // 咪牌秒數
 0. **閒家發牌咪牌過程**
 	- C2GBaccarat3DPlayerDealPeekProgress
@@ -48,8 +47,7 @@ Baccarat3D 封包
 0. **莊家發牌咪牌或開牌**
 	- G2CBaccarat3DBankerDealPeek // 廣播
 		- PeekSeatID int // 咪牌的座位 ID, 0: 荷官咪牌
-		- CardKind [2]int // 閒家的兩張牌的花色, 0: 黑桃, 1: 紅心, 2: 梅花, 3: 方塊
-		- CardValue [2]int // 閒家的兩張牌的牌值, 1: A, 2: 2, ..., 10: T, ..., 13: K
+		- CardIDs [2]int // 莊家的兩張牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
 		- PeekSecs int // 咪牌秒數
 0. **莊家發牌咪牌過程**
 	- C2GBaccarat3DBankerDealPeekProgress
@@ -62,8 +60,7 @@ Baccarat3D 封包
 0. **閒家補牌咪牌或開牌**
 	- G2CBaccarat3DPlayerCallPeek // 廣播
 		- PeekSeatID int // 咪牌的座位 ID, 0: 荷官咪牌
-		- CardKind int // 閒家的第三牌的花色, 0: 黑桃, 1: 紅心, 2: 梅花, 3: 方塊
-		- CardValue int // 閒家的第三牌的牌值, 1: A, 2: 2, ..., 10: T, ..., 13: K
+		- CardID int // 閒家的第三牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
 		- PeekSecs int // 咪牌秒數
 0. **閒家補牌咪牌過程**
 	- C2GBaccarat3DPlayerCallPeekProgress
@@ -76,8 +73,7 @@ Baccarat3D 封包
 0. **莊家補牌咪牌或開牌**
 	- G2CBaccarat3DBankerCallPeek // 廣播
 		- PeekSeatID int // 咪牌的座位 ID, 0: 荷官咪牌
-		- CardKind int // 莊家的第三牌的花色, 0: 黑桃, 1: 紅心, 2: 梅花, 3: 方塊
-		- CardValue int // 莊家的第三牌的牌值, 1: A, 2: 2, ..., 10: T, ..., 13: K
+		- CardID int // 莊家的第三牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
 		- PeekSecs int // 咪牌秒數
 0. **莊家補牌咪牌過程**
 	- C2GBaccarat3DBankerCallPeekProgress
