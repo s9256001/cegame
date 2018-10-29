@@ -11,6 +11,9 @@ Baccarat3D 封包
 0. **一局開始**
 	- G2CBaccarat3DRoundStart // 廣播
 		- RoundCode string // 局號
+0. **洗牌**
+	- G2CBaccarat3DShuffle // 廣播
+		- ShoeTailNum int // 靴尾張數 (剩餘張 <= 此張數表示該靴結束)
 0. **押注輪開始**
 	- G2CBaccarat3DBetRoundStart // 廣播
 		- RoundCode string // 局號
