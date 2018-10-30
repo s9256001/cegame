@@ -8,6 +8,7 @@ Baccarat3D 封包
 		- SeatID int // 座位 ID
 		- Result int // 結果
 		- Money int // 玩家的錢
+		- MaxPlayerBet int // 個人限紅
 0. **測試離開遊戲**
 	- C2GTestLeaveGame
 	- G2CTestLeaveGame
