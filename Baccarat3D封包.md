@@ -8,6 +8,10 @@ Baccarat3D 封包
 		- SeatID int // 座位 ID
 		- Result int // 結果
 		- Money int // 玩家的錢
+0. **測試離開遊戲**
+	- C2GTestLeaveGame
+	- G2CTestLeaveGame
+		- Result int // 結果
 0. **一局開始**
 	- G2CBaccarat3DRoundStart // 廣播
 		- RoundCode string // 局號
