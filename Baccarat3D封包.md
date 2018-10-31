@@ -13,6 +13,12 @@ Baccarat3D 封包
 	- C2GTestLeaveGame
 	- G2CTestLeaveGame
 		- Result int // 結果
+0. **初始資訊**
+	- G2CBaccarat3DInit
+		- RoundCode string // 局號
+		- ShoeTailNum int // 靴尾張數 (剩餘張 <= 此張數表示該靴結束)
+		- PlayerCardIDs [3]int // 閒家的牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
+		- BankerCardIDs [3]int // 莊家的牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
 0. **一局開始**
 	- G2CBaccarat3DRoundStart // 廣播
 		- RoundCode string // 局號
