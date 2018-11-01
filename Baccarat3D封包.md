@@ -11,6 +11,7 @@ Baccarat3D 封包
 		- MaxPlayerBet int // 個人限紅
 0. **測試離開遊戲**
 	- C2GTestLeaveGame
+		- GameID int // 遊戲 ID
 	- G2CTestLeaveGame
 		- Result int // 結果
 0. **初始資訊**
@@ -30,6 +31,7 @@ Baccarat3D 封包
 		- RoundCode string // 局號
 0. **發送押注**
 	- C2GBaccarat3DBet
+		- GameID int // 遊戲 ID
 		- Bets [5]int // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
 	- G2CBaccarat3DBet // 成功則廣播
 		- Bets [5]int // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
@@ -37,6 +39,7 @@ Baccarat3D 封包
 		- Result int // 結果
 0. **確認押注**
 	- C2GBaccarat3DConfirmBet
+		- GameID int // 遊戲 ID
 0. **開始發牌**
 	- G2CBaccarat3DDeal // 廣播
 0. **更新押注後的錢**
@@ -49,11 +52,13 @@ Baccarat3D 封包
 		- PeekSecs int // 咪牌秒數
 0. **閒家發牌咪牌過程**
 	- C2GBaccarat3DPlayerDealPeekProgress
+		- GameID int // 遊戲 ID
 		- Info string // client 自定的夾帶訊息
 	- G2CBaccarat3DPlayerDealPeekProgress // 廣播給其他人
 		- Info string // client 自定的夾帶訊息
 0. **閒家發牌咪牌結束**
 	- C2GBaccarat3DPlayerDealPeekEnd
+		- GameID int // 遊戲 ID
 	- G2CBaccarat3DPlayerDealPeekEnd // 廣播
 0. **莊家發牌咪牌或開牌**
 	- G2CBaccarat3DBankerDealPeek // 廣播
@@ -62,11 +67,13 @@ Baccarat3D 封包
 		- PeekSecs int // 咪牌秒數
 0. **莊家發牌咪牌過程**
 	- C2GBaccarat3DBankerDealPeekProgress
+		- GameID int // 遊戲 ID
 		- Info string // client 自定的夾帶訊息
 	- G2CBaccarat3DBankerDealPeekProgress // 廣播給其他人
 		- Info string // client 自定的夾帶訊息
 0. **莊家發牌咪牌結束**
 	- C2GBaccarat3DBankerDealPeekEnd
+		- GameID int // 遊戲 ID
 	- G2CBaccarat3DBankerDealPeekEnd // 廣播
 0. **閒家補牌咪牌或開牌**
 	- G2CBaccarat3DPlayerCallPeek // 廣播
@@ -75,11 +82,13 @@ Baccarat3D 封包
 		- PeekSecs int // 咪牌秒數
 0. **閒家補牌咪牌過程**
 	- C2GBaccarat3DPlayerCallPeekProgress
+		- GameID int // 遊戲 ID
 		- Info string // client 自定的夾帶訊息
 	- G2CBaccarat3DPlayerCallPeekProgress // 廣播給其他人
 		- Info string // client 自定的夾帶訊息
 0. **閒家補牌咪牌結束**
 	- C2GBaccarat3DPlayerCallPeekEnd
+		- GameID int // 遊戲 ID
 	- G2CBaccarat3DPlayerCallPeekEnd // 廣播
 0. **莊家補牌咪牌或開牌**
 	- G2CBaccarat3DBankerCallPeek // 廣播
@@ -88,11 +97,13 @@ Baccarat3D 封包
 		- PeekSecs int // 咪牌秒數
 0. **莊家補牌咪牌過程**
 	- C2GBaccarat3DBankerCallPeekProgress
+		- GameID int // 遊戲 ID
 		- Info string // client 自定的夾帶訊息
 	- G2CBaccarat3DBankerCallPeekProgress // 廣播給其他人
 		- Info string // client 自定的夾帶訊息
 0. **莊家補牌咪牌結束**
 	- C2GBaccarat3DBankerCallPeekEnd
+		- GameID int // 遊戲 ID
 	- G2CBaccarat3DBankerCallPeekEnd // 廣播
 0. **結算**
 	- G2CBaccarat3DSettle // 廣播
