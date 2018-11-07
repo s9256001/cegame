@@ -2,12 +2,12 @@ Baccarat3D 封包
 =========================
 0. **測試直連遊戲**
 	- CtoGTestJoinGame
+		- UserID string // 使用者唯一碼
 	- GtoCTestJoinGame
 		- GameID int // 遊戲 ID
 		- RoomID int // 房間 ID
 		- SeatID int // 座位 ID
 		- Result int // 結果
-		- Money int64 // 玩家的錢
 		- MaxPlayerBet int64 // 個人限紅
 		- ValidBets []int64 // 可押注選項
 		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的秒數)
@@ -16,11 +16,25 @@ Baccarat3D 封包
 	- GtoCTestLeaveGame
 		- Result int // 結果
 0. **初始資訊**
+	- SSeatInfo
+		- SeatID int // 座位 ID
+		- AccountID int // 帳號 ID
+		- UserID string // 使用者 ID
+		- Account string // 玩家的帳號
+		- NickName string // 玩家的暱稱
+		- Money int64 // 玩家的錢
 	- GtoCBaccarat3DInit
 		- RoundCode string // 局號
 		- ShoeTailNum int // 靴尾張數 (剩餘張 <= 此張數表示該靴結束)
 		- PlayerCardIDs [3]int // 閒家的牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
 		- BankerCardIDs [3]int // 莊家的牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
+		- SeatInfos []SSeatInfo // 座位資訊列表
+0. **玩家進入**
+	- GtoCBaccarat3DPlayerJoin
+		- SeatInfo SSeatInfo // 座位資訊
+0. **玩家離開**
+	- GtoCBaccarat3DPlayerLeave
+		- SeatID int // 座位 ID
 0. **一局開始**
 	- GtoCBaccarat3DRoundStart // 廣播
 		- RoundCode string // 局號
@@ -107,9 +121,9 @@ Baccarat3D 封包
 	- CtoGBaccarat3DBankerCallPeekEnd
 	- GtoCBaccarat3DBankerCallPeekEnd // 廣播
 0. **結算**
-	- GtoCBaccarat3DSettle // 廣播
-		- PlayerPairWin int64 // 閒對贏錢
-		- BankerPairWin int64 // 莊對贏錢
-		- TotalWin int64 // 總贏錢
+	- SSeatMoney
+		- SeatID int // 座位 ID
 		- Money int64 // 玩家的錢
+	- GtoCBaccarat3DSettle // 廣播
+		- SeatMoneys []SSeatMoney // 座位的錢列表
 		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的秒數)
