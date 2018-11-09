@@ -19,7 +19,6 @@ Baccarat3D 封包
 	- SSeatInfo
 		- SeatID int // 座位 ID
 		- AccountID int // 帳號 ID
-		- UserID string // 使用者 ID
 		- Account string // 玩家的帳號
 		- NickName string // 玩家的暱稱
 		- Money int64 // 玩家的錢
