@@ -88,9 +88,6 @@ Baccarat3D 封包
 0. **莊家發牌咪牌結束**
 	- CtoGBaccarat3DBankerDealPeekEnd
 	- GtoCBaccarat3DBankerDealPeekEnd // 廣播
-0. **閒家開始補牌**
-	- GtoCBaccarat3DPlayerCall // 廣播
-		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
 0. **閒家補牌咪牌或開牌**
 	- GtoCBaccarat3DPlayerCallPeek // 廣播
 		- CardID int // 閒家的第三牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
@@ -104,9 +101,6 @@ Baccarat3D 封包
 0. **閒家補牌咪牌結束**
 	- CtoGBaccarat3DPlayerCallPeekEnd
 	- GtoCBaccarat3DPlayerCallPeekEnd // 廣播
-0. **莊家開始補牌**
-	- GtoCBaccarat3DBankerCall // 廣播
-		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
 0. **莊家補牌咪牌或開牌**
 	- GtoCBaccarat3DBankerCallPeek // 廣播
 		- CardID int // 莊家的第三牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
