@@ -1,0 +1,14 @@
+@startuml
+
+actor Client
+control DataServer
+control LobbyServer
+control GameServer
+
+autonumber 1
+Client -> LobbyServer: CtoLbLogout
+LobbyServer -> DataServer: LbtoDLogout\n通知DataServer登出
+LobbyServer -> GameServer: LbtoGLogout\n若在遊戲中, 則通知GameServer離開遊戲
+LobbyServer -> Client: LbtoCLogout
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+
+database MySQL
+control DataServer
+control GameServer
+entity Game
+control LobbyServer
+
+autonumber 1
+MySQL -> DataServer: 偵測到斷線
+DataServer -> GameServer: DtoSShutdown
+GameServer -> Game: shutdown
+... ...
+DataServer -> GameServer: 偵測到斷線
+GameServer -> Game: shutdown
+... ...
+LobbyServer -> GameServer: 偵測到斷線
+GameServer -> LobbyServer: 重連 lobby server
+
+@enduml

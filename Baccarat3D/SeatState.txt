@@ -1,0 +1,14 @@
+@startuml
+
+Empty : 空位
+Play : 遊戲中
+Gone : 已押注, 遊戲過程中離開, 進行託管
+
+[*] --> Empty : 初始
+Empty --> Play : 玩家進來
+Play --> Empty : 玩家未押注, 或不是在遊戲過程中離開
+Play --> Gone : 已押注, 遊戲過程中離開
+Gone --> Play : 玩家重回該遊戲
+Gone --> Empty : 此押注局結算完
+
+@enduml

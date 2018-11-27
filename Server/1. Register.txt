@@ -1,0 +1,30 @@
+@startuml
+
+control LoginServer
+control DataServer
+control LobbyServer
+control GameServer
+
+autonumber 1
+LoginServer -> DataServer: 連線
+DataServer -> LoginServer: 連線成功
+LoginServer -> DataServer: SutoMaRegister
+DataServer -> LoginServer: MatoSuRegister
+... ...
+LobbyServer -> DataServer: 連線
+DataServer -> LobbyServer: 連線成功
+LobbyServer -> DataServer: SutoMaRegister
+DataServer -> LobbyServer: MatoSuRegister
+... ...
+GameServer -> DataServer: 連線
+DataServer -> GameServer: 連線成功
+GameServer -> DataServer: SutoMaRegister
+DataServer -> GameServer: MatoSuRegister
+GameServer -> DataServer: StoDGetGames
+DataServer -> GameServer: DtoSGetGames
+GameServer -> LobbyServer: 連線
+LobbyServer -> GameServer: 連線成功
+GameServer -> LobbyServer: SutoMaRegister
+LobbyServer -> GameServer: MatoSuRegister
+
+@enduml

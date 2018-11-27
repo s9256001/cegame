@@ -1,0 +1,13 @@
+@startuml
+
+actor Client
+control LobbyServer
+control GameServer
+
+autonumber 1
+Client -> GameServer: CtoGLeaveGame
+GameServer -> Client: GtoCLeaveGame
+... ...
+GameServer -> LobbyServer: GtoLbLeaveGameOK
+
+@enduml

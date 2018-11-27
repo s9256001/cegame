@@ -1,0 +1,39 @@
+@startuml
+
+Idle : 閒置
+RoundStart : 一靴開始, 遞增 RoundCount, 洗牌
+Shuffle : 洗牌
+BetRoundStart : 押注輪開始, 遞增 BetRoundCount
+Bet : 等待玩家押注\n此狀態離開退還押注
+Deal : 發閒莊兩張牌\n扣除押注的錢\n起始一小段時間仍然接受押注
+PlayerDealPost : 閒發牌後處理, 咪牌或開牌
+BankerDealPost : 莊發牌後處理, 咪牌或開牌
+PlayerCall : 閒補牌
+PlayerCallPost : 閒補牌後處理, 咪牌或開牌
+BankerCall : 莊補牌
+BankerCallPost : 莊補牌後處理, 咪牌或開牌
+Settle : 結算
+
+[*] --> Idle : 初始
+Idle --> RoundStart : 玩家進來\nBetRoundCount == 0 表示新的一靴
+Idle --> BetRoundStart : 玩家進來\nBetRoundCount > 0 表示不是新的一靴
+RoundStart --> Shuffle : 新的一靴初始結束
+Shuffle --> BetRoundStart : 洗牌結束
+BetRoundStart --> Bet : 押注輪初始結束
+Bet --> Idle : 押注時間到或都已確認, 沒有玩家\n遞減 BetRoundCount, BetRoundCount == 0 時, 遞減 RoundCount
+Bet --> Deal : 押注時間到或都已確認, 有玩家
+Deal --> PlayerDealPost : 發牌結束
+PlayerDealPost --> BankerDealPost : 閒發牌後處理結束
+BankerDealPost --> PlayerCall : 莊發牌後處理結束, 閒需補牌
+BankerDealPost --> BankerCall : 莊發牌後處理結束, 莊需補牌
+BankerDealPost --> Settle : 莊發牌後處理結束, 閒莊不需補牌
+PlayerCall --> PlayerCallPost : 閒補牌結束
+PlayerCallPost --> BankerCall : 閒補牌後處理結束, 莊需補牌
+PlayerCallPost --> Settle : 閒補牌後處理結束, 莊不需補牌
+BankerCall --> BankerCallPost : 莊補牌結束
+BankerCallPost --> Settle : 莊補牌後處理結束
+Settle --> BetRoundStart : 結算結束, 此靴未完, 有玩家
+Settle --> RoundStart : 結算結束, 此靴已完, 有玩家
+Settle --> Idle : 結算結束, 沒有玩家
+
+@enduml
