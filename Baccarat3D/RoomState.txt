@@ -4,14 +4,14 @@ Idle : 閒置
 RoundStart : 一靴開始, 遞增 RoundCount, 洗牌
 Shuffle : 洗牌
 BetRoundStart : 押注輪開始, 遞增 BetRoundCount
-Bet : 等待玩家押注\n此狀態離開退還押注
-Deal : 發閒莊兩張牌\n扣除押注的錢\n起始一小段時間仍然接受押注
+Bet : 等待玩家押注\n此時離開投注還沒有計算
+Deal : 發閒莊兩張牌\n起始一小段時間仍然接受押注\n時間到扣除押注的錢\n此時才真正投注成功
 PlayerDealPost : 閒發牌後處理, 咪牌或開牌
 BankerDealPost : 莊發牌後處理, 咪牌或開牌
-PlayerCall : 閒補牌
-PlayerCallPost : 閒補牌後處理, 咪牌或開牌
-BankerCall : 莊補牌
-BankerCallPost : 莊補牌後處理, 咪牌或開牌
+PlayerCall : 閒補牌\n若荷官咪牌則開牌
+PlayerCallPost : 閒補牌後處理, 咪牌與開牌表演
+BankerCall : 莊補牌\n若荷官咪牌則開牌
+BankerCallPost : 莊補牌後處理, 咪牌與開牌表演
 Settle : 結算
 
 [*] --> Idle : 初始
