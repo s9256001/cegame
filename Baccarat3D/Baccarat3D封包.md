@@ -61,6 +61,11 @@ Baccarat3D 封包
 	- GtoCBaccarat3DBetEnd // 廣播
 		- PlayerPeekSeatID int // 閒家咪牌的座位 ID, 0: 荷官咪牌
 		- BankerPeekSeatID int // 莊家咪牌的座位 ID, 0: 荷官咪牌
+0. **咪牌過程**
+	- CtoGBaccarat3DPeekProgress
+		- Info string // client 自定的夾帶訊息
+	- GtoCBaccarat3DPeekProgress // 廣播給其他人
+		- Info string // client 自定的夾帶訊息
 0. **閒家發牌咪牌或開牌**
 	- GtoCBaccarat3DPlayerDealPeek // 廣播
 		- CardIDs [2]int // 閒家的兩張牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
