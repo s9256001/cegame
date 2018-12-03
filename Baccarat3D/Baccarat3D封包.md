@@ -71,11 +71,6 @@ Baccarat3D 封包
 		- CardIDs [2]int // 閒家的兩張牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
 		- PeekSecs int // 咪牌秒數
 		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
-0. **閒家發牌咪牌過程**
-	- CtoGBaccarat3DPlayerDealPeekProgress
-		- Info string // client 自定的夾帶訊息
-	- GtoCBaccarat3DPlayerDealPeekProgress // 廣播給其他人
-		- Info string // client 自定的夾帶訊息
 0. **閒家發牌咪牌結束**
 	- CtoGBaccarat3DPlayerDealPeekEnd
 	- GtoCBaccarat3DPlayerDealPeekEnd // 廣播
@@ -84,11 +79,6 @@ Baccarat3D 封包
 		- CardIDs [2]int // 莊家的兩張牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
 		- PeekSecs int // 咪牌秒數
 		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
-0. **莊家發牌咪牌過程**
-	- CtoGBaccarat3DBankerDealPeekProgress
-		- Info string // client 自定的夾帶訊息
-	- GtoCBaccarat3DBankerDealPeekProgress // 廣播給其他人
-		- Info string // client 自定的夾帶訊息
 0. **莊家發牌咪牌結束**
 	- CtoGBaccarat3DBankerDealPeekEnd
 	- GtoCBaccarat3DBankerDealPeekEnd // 廣播
@@ -97,11 +87,6 @@ Baccarat3D 封包
 		- CardID int // 閒家的第三牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
 		- PeekSecs int // 咪牌秒數
 		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
-0. **閒家補牌咪牌過程**
-	- CtoGBaccarat3DPlayerCallPeekProgress
-		- Info string // client 自定的夾帶訊息
-	- GtoCBaccarat3DPlayerCallPeekProgress // 廣播給其他人
-		- Info string // client 自定的夾帶訊息
 0. **閒家補牌咪牌結束**
 	- CtoGBaccarat3DPlayerCallPeekEnd
 	- GtoCBaccarat3DPlayerCallPeekEnd // 廣播
@@ -110,11 +95,6 @@ Baccarat3D 封包
 		- CardID int // 莊家的第三牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
 		- PeekSecs int // 咪牌秒數
 		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
-0. **莊家補牌咪牌過程**
-	- CtoGBaccarat3DBankerCallPeekProgress
-		- Info string // client 自定的夾帶訊息
-	- GtoCBaccarat3DBankerCallPeekProgress // 廣播給其他人
-		- Info string // client 自定的夾帶訊息
 0. **莊家補牌咪牌結束**
 	- CtoGBaccarat3DBankerCallPeekEnd
 	- GtoCBaccarat3DBankerCallPeekEnd // 廣播
