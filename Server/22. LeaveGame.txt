@@ -9,5 +9,14 @@ Client -> GameServer: CtoGLeaveGame
 GameServer -> Client: GtoCLeaveGame
 ... ...
 GameServer -> LobbyServer: GtoLbLeaveGameOK
+GameServer -> Client: 切斷連線
+... ...
+autonumber 1
+Client -> GameServer: 偵測到斷線
+GameServer -> GameServer: 離開遊戲流程
+... ...
+autonumber 1
+LobbyServer -> GameServer: LbtoGLogout\n大廳通知登出
+GameServer -> GameServer: 離開遊戲流程
 
 @enduml

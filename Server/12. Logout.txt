@@ -10,5 +10,10 @@ Client -> LobbyServer: CtoLbLogout
 LobbyServer -> DataServer: LbtoDLogout\n通知DataServer登出
 LobbyServer -> GameServer: LbtoGLogout\n若在遊戲中, 則通知GameServer離開遊戲
 LobbyServer -> Client: LbtoCLogout
+LobbyServer -> Client: 切斷連線
+... ...
+autonumber 1
+Client -> LobbyServer: 偵測到斷線
+LobbyServer -> LobbyServer: 登出流程
 
 @enduml
