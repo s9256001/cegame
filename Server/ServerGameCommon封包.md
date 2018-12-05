@@ -1,0 +1,61 @@
+Server Game Common 封包
+=========================
+0. **時間同步**
+	- CtoGGetServerTime
+	- GtoCGetServerTime
+		- ServerTime int64
+0. **加入遊戲**
+	- CtoLbJoinGame
+		- GameID int
+		- RoomID int
+		- SeatID int
+	- LbtoCJoinGame
+		- GameID            int
+		- RoomID            int
+		- SeatID            int
+		- Result            int
+		- Token             string
+		- GameServerAddress string
+	- CtoGJoinGame
+		- AccountID uint32
+		- Token     string
+		- GameID    int
+		- RoomID    int
+		- SeatID    int
+	- GtoLbJoinGame
+		- ClientPeerID uint32
+		- AccountID    uint32
+		- Token        string
+		- GameID       int
+		- RoomID       int
+		- SeatID       int
+	- LbtoGJoinGame
+		- ClientPeerID uint32
+		- AccountID    uint32
+		- GameID       int
+		- RoomID       int
+		- SeatID       int
+		- Result       int
+		- PlayerInfo   SPlayerInfo
+	- GtoCJoinGame
+		- GameID       int
+		- RoomID       int
+		- SeatID       int
+		- Result       int
+		- MaxPlayerBet int64
+		- ValidBets    []int64
+		- ServerTime   int64
+	- GtoLbJoinGameOK
+		- AccountID uint32
+		- GameID    int
+		- RoomID    int
+		- SeatID    int
+0. **離開遊戲**
+	- CtoGLeaveGame
+	- GtoCLeaveGame
+		- Result int
+	- GtoLbLeaveGameOK
+		- AccountID uint32
+		- GameID    int
+		- RoomID    int
+		- SeatID    int

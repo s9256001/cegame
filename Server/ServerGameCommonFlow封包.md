@@ -1,0 +1,59 @@
+Baccarat3D 封包
+=========================
+0. **取得遊戲列表**
+	- StoDGetGames
+	- SGameDBModel
+		- GameID        int
+		- RoomNum       int
+		- SeatNum       int
+		- ValidBetUnits []int64
+		- MaxBet        int64
+		- Flag          uint64
+	- DtoSGetGames
+		- Games []*SGameDBModel
+0. **押注**
+	- SServerBetRequest
+		- ClientPeerID uint32
+		- AccountID    uint32
+		- Bet          int64
+		- Detail       string
+	- GtoDBet
+		- GameID    int
+		- RoundCode string
+		- Bets      []SServerBetRequest
+	- SServerBetResult
+		- ClientPeerID uint32
+		- AccountID    uint32
+		- Result       int
+		- BetID        uint64
+		- Money        int64
+	- DtoGBet
+		- GameID    int
+		- RoundCode string
+		- Bets      []SServerBetResult
+0. **結算**
+	- SServerSettleRequest
+		- ClientPeerID uint32
+		- AccountID    uint32
+		- BetID        uint64
+		- Win          int64
+		- Detail       string
+	- GtoDSettle
+		- GameID    int
+		- RoundCode string
+		- Settles   []SServerSettleRequest
+	- SServerSettleResult
+		- ClientPeerID uint32
+		- AccountID    uint32
+		- Result       int
+		- Money        int64
+	- DtoGSettle
+		- GameID    int
+		- RoundCode string
+		- Settles   []SServerSettleResult
+0. **賽果**
+	- GtoDGameResult
+		- GameID    int
+		- RoundCode string
+		- Result    string
+		- Detail    string
