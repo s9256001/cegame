@@ -22,11 +22,15 @@ Baccarat3D 封包
 		- Account string // 玩家的帳號
 		- NickName string // 玩家的暱稱
 		- Money int64 // 玩家的錢
+		- Bets [5]int64 // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
 	- GtoCBaccarat3DInit
 		- RoundCode string // 局號
 		- ShoeTailNum int // 靴尾張數 (剩餘張 <= 此張數表示該靴結束)
 		- PlayerCardIDs [3]int // 閒家的牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
 		- BankerCardIDs [3]int // 莊家的牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
+		- ViewState int // 顯示用的操作狀態, 0: 無, 1: 洗牌, 2: 押注輪開始, 3: 開始發牌, 4: 閒家發牌咪牌或開牌, 5: 莊家發牌咪牌或開牌, 6: 閒家補牌咪牌或開牌, 7: 莊家補牌咪牌或開牌, 8: 結算
+	    - ViewSecs int // 顯示用的 操作秒數
+	    - ViewServerTime int64 // 顯示用的 server 時間 (由 1970/1/1 開始算的毫秒數)
 		- SeatInfos []SSeatInfo // 座位資訊列表
 0. **玩家進入**
 	- GtoCBaccarat3DPlayerJoin
@@ -56,7 +60,7 @@ Baccarat3D 封包
 	- CtoGBaccarat3DConfirmBet
 0. **開始發牌**
 	- GtoCBaccarat3DDeal // 廣播
-	- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
+		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
 0. **押注結束**
 	- GtoCBaccarat3DBetEnd // 廣播
 		- PlayerPeekSeatID int // 閒家咪牌的座位 ID, 0: 荷官咪牌
