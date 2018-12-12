@@ -1,20 +1,5 @@
 Baccarat3D 封包
 =========================
-0. **測試直連遊戲**
-	- CtoGTestJoinGame
-		- UserID string // 使用者唯一碼
-	- GtoCTestJoinGame
-		- GameID int // 遊戲 ID
-		- RoomID int // 房間 ID
-		- SeatID int // 座位 ID
-		- Result int // 結果
-		- MaxPlayerBet int64 // 個人限紅
-		- ValidBets []int64 // 可押注選項
-		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
-0. **測試離開遊戲**
-	- CtoGTestLeaveGame
-	- GtoCTestLeaveGame
-		- Result int // 結果
 0. **初始資訊**
 	- SSeatInfo
 		- SeatID int // 座位 ID
@@ -109,3 +94,7 @@ Baccarat3D 封包
 	- GtoCBaccarat3DSettle // 廣播
 		- SeatMoneys []SSeatMoney // 座位的錢列表
 		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
+		- Result uint32 // 各區開獎結果; 各區以 1 bit 表示, 1 代表有開, 0代表沒開; bit 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
+0. **此靴的賽果列表**
+	- GtoCBaccarat3DGameResults
+		- Results []uint32 // 順序依照押注輪次; 各區開獎結果; 各區以 1 bit 表示, 1 代表有開, 0代表沒開; bit 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
