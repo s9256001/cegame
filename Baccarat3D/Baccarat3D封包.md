@@ -96,7 +96,7 @@ Baccarat3D 封包
 	- GtoCBaccarat3DSettle // 廣播
 		- SeatMoneys []SSeatMoney // 座位的錢列表
 		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
-		- Result uint8 // 各區開獎結果; 各區以 1 bit 表示, 1 代表有開, 0代表沒開; bit 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
+		- Result uint32 // 各區開獎結果; 各區以 1 bit 表示, 1 代表有開, 0代表沒開; bit 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
 0. **此靴的賽果列表**
 	- GtoCBaccarat3DGameResults
-		- Results []uint8 // 順序依照押注輪次; 各區開獎結果; 各區以 1 bit 表示, 1 代表有開, 0代表沒開; bit 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
+		- Results []uint32 // 順序依照押注輪次; 各區開獎結果; 各區以 1 bit 表示, 1 代表有開, 0代表沒開; bit 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
