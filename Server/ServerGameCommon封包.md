@@ -59,3 +59,21 @@ Server Game Common 封包
 		- GameID    int
 		- RoomID    int
 		- SeatID    int
+0. **讀取遊戲設定**
+	- AtoGReadGameSetting
+		- GameID    int
+		- AccountID uint32
+	- GtoAReadGameSetting
+		- GameID    int
+		- AccountID uint32
+		- Setting   string
+		- Result    int
+0. **寫入遊戲設定**
+	- AtoGWriteGameSetting
+		- GameID    int
+		- AccountID uint32
+		- Setting   string
+	- GtoAWriteGameSetting
+		- GameID    int
+		- AccountID uint32
+		- Result    int
