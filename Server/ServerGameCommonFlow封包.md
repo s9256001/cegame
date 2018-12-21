@@ -39,9 +39,15 @@ Baccarat3D 封包
 		- Win          int64
 		- Detail       string
 	- GtoDSettle
-		- GameID    int
-		- RoundCode string
-		- Settles   []SServerSettleRequest
+		- GameID                    int
+		- RoundCode                 string
+		- Settles                   []SServerSettleRequest
+		- ServerTotalWin                  int64
+		- ServerTotalMonthlyWin           int64
+		- ServerTotalMonthlyWinCreateTime time.Time
+		- TotalWin                  int64
+		- TotalMonthlyWin           int64
+		- TotalMonthlyWinCreateTime time.Time
 	- SServerSettleResult
 		- ClientPeerID uint32
 		- AccountID    uint32

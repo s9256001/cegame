@@ -11,6 +11,7 @@ Baccarat3D 封包
 	- GtoCBaccarat3DInit
 		- BetRoundCount int // 押注輪次 (1-based)
 		- RoundCode string // 局號
+		- ShoeLen int // 靴剩餘張數
 		- ShoeTailNum int // 靴尾張數 (剩餘張 <= 此張數表示該靴結束)
 		- PlayerCardIDs [3]int // 閒家的牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
 		- BankerCardIDs [3]int // 莊家的牌 ID, 1~52, 順序為黑桃 A, 黑桃 2, ..., 黑桃 K, 紅心 A, 紅心 2, ..., 紅心 K, 梅花 A, 梅花 2, ..., 梅花 K, 方塊 A, 方塊 2, ..., 方塊 K
@@ -27,6 +28,7 @@ Baccarat3D 封包
 0. **一局開始**
 	- GtoCBaccarat3DRoundStart // 廣播
 		- RoundCode string // 局號
+		- ShoeTailNum int // 靴尾張數 (剩餘張 <= 此張數表示該靴結束)
 0. **洗牌**
 	- GtoCBaccarat3DShuffle // 廣播
 		- ShoeTailNum int // 靴尾張數 (剩餘張 <= 此張數表示該靴結束)
@@ -36,6 +38,7 @@ Baccarat3D 封包
 		- BetRoundCount int // 押注輪次 (1-based)
 		- RoundCode string // 局號
 		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
+		- ShoeLen int // 靴剩餘張數
 0. **發送押注**
 	- CtoGBaccarat3DBet
 		- Bets [5]int64 // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
@@ -100,3 +103,6 @@ Baccarat3D 封包
 0. **此靴的賽果列表**
 	- GtoCBaccarat3DGameResults
 		- Results []uint32 // 順序依照押注輪次; 各區開獎結果; 各區以 1 bit 表示, 1 代表有開, 0代表沒開; bit 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
+0. **一局結束**
+	- GtoCBaccarat3DRoundEnd // 廣播
+		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
