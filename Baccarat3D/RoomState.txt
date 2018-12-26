@@ -15,7 +15,7 @@ Settle : 結算
 RoundEnd : 一靴結束
 
 [*] --> Idle : 初始
-Idle --> RoundStart : 玩家進來\nBetRoundCount == 0 表示新的一靴
+Idle --> RoundStart : 玩家進來\n已到靴尾 or BetRoundCount == 0 表示新的一靴
 Idle --> BetRoundStart : 玩家進來\nBetRoundCount > 0 表示不是新的一靴
 RoundStart --> BetRoundStart : 新的一靴初始結束
 BetRoundStart --> Bet : 押注輪初始結束
