@@ -42,12 +42,6 @@ Baccarat3D 封包
 		- GameID                    int
 		- RoundCode                 string
 		- Settles                   []SServerSettleRequest
-		- ServerTotalWin                  int64
-		- ServerTotalMonthlyWin           int64
-		- ServerTotalMonthlyWinCreateTime time.Time
-		- TotalWin                  int64
-		- TotalMonthlyWin           int64
-		- TotalMonthlyWinCreateTime time.Time
 	- SServerSettleResult
 		- ClientPeerID uint32
 		- AccountID    uint32
@@ -57,9 +51,17 @@ Baccarat3D 封包
 		- GameID    int
 		- RoundCode string
 		- Settles   []SServerSettleResult
+		- TotalWin                  int64
+		- TotalMonthlyWin           int64
+		- TotalMonthlyWinCreateTime time.Time
 0. **賽果**
 	- GtoDGameResult
 		- GameID    int
 		- RoundCode string
 		- Result    string
 		- Detail    string
+0. **更新 Server 總輸贏**
+	- DtoGUpdateServerTotalWin
+		- TotalWin                  int64
+		- TotalMonthlyWin           int64
+		- TotalMonthlyWinCreateTime time.Time
