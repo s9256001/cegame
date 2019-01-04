@@ -77,3 +77,27 @@ Server Game Common 封包
 		- GameID    int
 		- AccountID uint32
 		- Result    int
+0. **取得遊戲列表**
+	- CtoLbGetGameList
+	- SGameInfo
+		- GameID        int
+		- RoomNum       int
+		- SeatNum       int
+		- ValidBetUnits []int64
+		- MaxBet        int64
+	- LbtoCGetGameList
+		- GameInfos []SGameInfo
+0. **取得房間列表**
+	- CtoLbGetRoomList
+		- GameID          int
+		- ViewBeginRoomID int
+		- ViewRoomNum     int
+	- SRoomInfo
+		- RoomID      int
+		- PlayerNum   int
+		- GameResults string
+	- LbtoCGetGameList
+		- GameID          int
+		- ViewBeginRoomID int
+		- ViewRoomNum     int
+		- RoomInfos       []SRoomInfo

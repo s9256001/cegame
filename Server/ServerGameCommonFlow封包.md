@@ -39,9 +39,9 @@ Baccarat3D 封包
 		- Win          int64
 		- Detail       string
 	- GtoDSettle
-		- GameID                    int
-		- RoundCode                 string
-		- Settles                   []SServerSettleRequest
+		- GameID       int
+		- RoundCode    string
+		- Settles      []SServerSettleRequest
 	- SServerSettleResult
 		- ClientPeerID uint32
 		- AccountID    uint32
@@ -65,3 +65,8 @@ Baccarat3D 封包
 		- TotalWin                  int64
 		- TotalMonthlyWin           int64
 		- TotalMonthlyWinCreateTime time.Time
+0. **更新遊戲賽果歷史**
+	- GtoLbUpdateGameResults
+		- GameID      int
+		- RoomID      int
+		- GameResults string
