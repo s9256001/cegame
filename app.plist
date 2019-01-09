@@ -17,13 +17,9 @@
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.Chimera.Baccarat3DTest</string>
-				<key>bundle-version</key>
-				<string>0.001</string>
+				<string>com.Chimera.Baccarat3D</string>
 				<key>kind</key>
 				<string>software</string>
-				<key>subtitle</key>
-				<string>41A472</string>
 				<key>title</key>
 				<string>Baccarat3D</string>
 			</dict>
