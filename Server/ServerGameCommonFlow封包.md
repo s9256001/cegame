@@ -1,16 +1,5 @@
 Baccarat3D 封包
 =========================
-0. **取得遊戲列表**
-	- StoDGetGames
-	- SGameDBModel
-		- GameID        int
-		- RoomNum       int
-		- SeatNum       int
-		- ValidBetUnits []int64
-		- MaxBet        int64
-		- Flag          uint64
-	- DtoSGetGames
-		- Games []*SGameDBModel
 0. **押注**
 	- SServerBetRequest
 		- ClientPeerID uint32

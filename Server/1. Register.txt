@@ -4,6 +4,7 @@ control LoginServer
 control DataServer
 control LobbyServer
 control GameServer
+control APIServer
 
 autonumber 1
 LoginServer -> DataServer: 連線
@@ -20,11 +21,26 @@ GameServer -> DataServer: 連線
 DataServer -> GameServer: 連線成功
 GameServer -> DataServer: SutoMaRegister
 DataServer -> GameServer: MatoSuRegister
-GameServer -> DataServer: StoDGetGames
-DataServer -> GameServer: DtoSGetGames
 GameServer -> LobbyServer: 連線
 LobbyServer -> GameServer: 連線成功
 GameServer -> LobbyServer: SutoMaRegister
 LobbyServer -> GameServer: MatoSuRegister
+... ...
+APIServer -> DataServer: 連線
+DataServer -> APIServer: 連線成功
+APIServer -> DataServer: SutoMaRegister
+DataServer -> APIServer: MatoSuRegister
+APIServer -> LoginServer: 連線
+LoginServer -> APIServer: 連線成功
+APIServer -> LoginServer: SutoMaRegister
+LoginServer -> APIServer: MatoSuRegister
+APIServer -> LobbyServer: 連線
+LobbyServer -> APIServer: 連線成功
+APIServer -> LobbyServer: SutoMaRegister
+LobbyServer -> APIServer: MatoSuRegister
+APIServer -> GameServer: 連線
+GameServer -> APIServer: 連線成功
+APIServer -> GameServer: SutoMaRegister
+GameServer -> APIServer: MatoSuRegister
 
 @enduml
