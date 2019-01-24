@@ -8,6 +8,7 @@ Baccarat3D 封包
 		- Detail       string
 	- GtoDBet
 		- GameID    int
+		- GameLevel int
 		- RoundCode string
 		- Bets      []SServerBetRequest
 	- SServerBetResult
@@ -18,6 +19,7 @@ Baccarat3D 封包
 		- Money        int64
 	- DtoGBet
 		- GameID    int
+		- GameLevel int
 		- RoundCode string
 		- Bets      []SServerBetResult
 0. **結算**
@@ -28,24 +30,27 @@ Baccarat3D 封包
 		- Win          int64
 		- Detail       string
 	- GtoDSettle
-		- GameID       int
-		- RoundCode    string
-		- Settles      []SServerSettleRequest
+		- GameID    int
+		- GameLevel int
+		- RoundCode string
+		- Settles   []SServerSettleRequest
 	- SServerSettleResult
 		- ClientPeerID uint32
 		- AccountID    uint32
 		- Result       int
 		- Money        int64
 	- DtoGSettle
-		- GameID    int
-		- RoundCode string
-		- Settles   []SServerSettleResult
+		- GameID                    int
+		- GameLevel                 int
+		- RoundCode                 string
+		- Settles                   []SServerSettleResult
 		- TotalWin                  int64
 		- TotalMonthlyWin           int64
 		- TotalMonthlyWinCreateTime time.Time
 0. **賽果**
 	- GtoDGameResult
 		- GameID    int
+		- GameLevel int
 		- RoundCode string
 		- Result    string
 		- Detail    string
@@ -57,5 +62,6 @@ Baccarat3D 封包
 0. **更新遊戲賽果歷史**
 	- GtoLbUpdateGameResults
 		- GameID      int
+		- GameLevel   int
 		- RoomID      int
 		- GameResults string

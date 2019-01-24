@@ -6,11 +6,13 @@ Server Game Common 封包
 		- ServerTime int64
 0. **加入遊戲**
 	- CtoLbJoinGame
-		- GameID int
-		- RoomID int
-		- SeatID int
+		- GameID    int
+		- GameLevel int
+		- RoomID    int
+		- SeatID    int
 	- LbtoCJoinGame
 		- GameID            int
+		- GameLevel         int
 		- RoomID            int
 		- SeatID            int
 		- Result            int
@@ -20,6 +22,7 @@ Server Game Common 封包
 		- AccountID uint32
 		- Token     string
 		- GameID    int
+		- GameLevel int
 		- RoomID    int
 		- SeatID    int
 	- GtoLbJoinGame
@@ -27,18 +30,21 @@ Server Game Common 封包
 		- AccountID    uint32
 		- Token        string
 		- GameID       int
+		- GameLevel    int
 		- RoomID       int
 		- SeatID       int
 	- LbtoGJoinGame
 		- ClientPeerID uint32
 		- AccountID    uint32
 		- GameID       int
+		- GameLevel    int
 		- RoomID       int
 		- SeatID       int
 		- Result       int
 		- PlayerInfo   SPlayerInfo
 	- GtoCJoinGame
 		- GameID       int
+		- GameLevel    int
 		- RoomID       int
 		- SeatID       int
 		- Result       int
@@ -48,6 +54,7 @@ Server Game Common 封包
 	- GtoLbJoinGameOK
 		- AccountID uint32
 		- GameID    int
+		- GameLevel int
 		- RoomID    int
 		- SeatID    int
 0. **離開遊戲**
@@ -57,6 +64,7 @@ Server Game Common 封包
 	- GtoLbLeaveGameOK
 		- AccountID uint32
 		- GameID    int
+		- GameLevel int
 		- RoomID    int
 		- SeatID    int
 0. **讀取遊戲設定**
@@ -81,15 +89,18 @@ Server Game Common 封包
 	- CtoLbGetGameList
 	- SGameInfo
 		- GameID        int
+		- GameLevel     int
 		- RoomNum       int
 		- SeatNum       int
 		- ValidBetUnits []int64
 		- MaxBet        int64
+		- IsFree        bool
 	- LbtoCGetGameList
 		- GameInfos []SGameInfo
 0. **取得房間列表**
 	- CtoLbGetRoomList
 		- GameID          int
+		- GameLevel       int
 		- ViewBeginRoomID int
 		- ViewRoomNum     int
 	- SRoomInfo
@@ -98,6 +109,7 @@ Server Game Common 封包
 		- GameResults string
 	- LbtoCGetGameList
 		- GameID          int
+		- GameLevel       int
 		- ViewBeginRoomID int
 		- ViewRoomNum     int
 		- RoomInfos       []SRoomInfo
