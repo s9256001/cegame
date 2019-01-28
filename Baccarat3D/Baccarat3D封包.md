@@ -2,12 +2,12 @@ Baccarat3D 封包
 =========================
 0. **初始資訊**
 	- SSeatInfo
-		- SeatID int // 座位 ID
-		- AccountID int // 帳號 ID
-		- Account string // 玩家的帳號
-		- NickName string // 玩家的暱稱
-		- Money int64 // 玩家的錢
-		- Bets [5]int64 // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
+		- SeatID    int    // 座位 ID
+		- AccountID uint32 // 帳號 ID
+		- NickName  string // 玩家的暱稱
+		- Money     int64  // 玩家的錢
+		- FreeMoney int64  // 玩家的免費錢
+		- Bets      [baccaratmathpkg.BetTypeNum]int64 // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
 	- GtoCBaccarat3DInit
 		- BetRoundCount int // 押注輪次 (1-based)
 		- RoundCode string // 局號
@@ -94,8 +94,9 @@ Baccarat3D 封包
 	- GtoCBaccarat3DBankerCallPeekEnd // 廣播
 0. **結算**
 	- SSeatMoney
-		- SeatID int // 座位 ID
-		- Money int64 // 玩家的錢
+		- SeatID    int   // 座位 ID
+		- Money     int64 // 玩家的錢
+		- FreeMoney int64 // 玩家的免費錢
 	- GtoCBaccarat3DSettle // 廣播
 		- SeatMoneys []SSeatMoney // 座位的錢列表
 		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)

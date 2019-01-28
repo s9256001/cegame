@@ -37,10 +37,11 @@ Server Login 封包
 		- Result       int
 		- PlayerInfo   SPlayerInfo
 	- LbtoCLoginLobby
-		- Result   int
-		- UserID   string
-		- NickName string
-		- Money    int64
+		- Result    int
+		- UserID    string
+		- NickName  string
+		- Money     int64
+		- FreeMoney int64
 0. **登出**
 	- CtoLbLogout
 	- LbtoCLogout
@@ -49,3 +50,18 @@ Server Login 封包
 		- AccountID uint32
 	- LbtoGLogout
 		- AccountID uint32
+0. **註冊帳號**
+	- CtoLRegisterAccount
+		- Account  string
+		- Password string
+	- LtoDRegisterAccount
+		- ClientPeerID uint32
+		- Account      string
+		- Password     string
+	- DtoLRegisterAccount
+		- ClientPeerID uint32
+		- Result       int
+		- Account      string
+		- Password     string
+	- LtoCRegisterAccount
+		- Result int
