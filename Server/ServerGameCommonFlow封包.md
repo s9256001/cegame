@@ -65,3 +65,9 @@ Baccarat3D 封包
 		- GameLevel   int
 		- RoomID      int
 		- GameResults string
+0. **儲存房間資料**
+	- GtoDSaveRoomData
+		- GameID    int
+		- GameLevel int
+		- RoomID    int
+		- Data      string
