@@ -107,3 +107,15 @@ Baccarat3D 封包
 0. **一局結束**
 	- GtoCBaccarat3DRoundEnd // 廣播
 		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
+0. **聊天**
+	- CtoGBaccarat3DChat
+		- Message string // 訊息
+	- GtoCBaccarat3DChat // 廣播
+		- SeatID  int    // 座位 ID
+		- Message string // 訊息
+0. **情緒效果**
+	- CtoGBaccarat3DEmotion
+		- EmotionID int // 情緒 ID
+	- GtoCBaccarat3DEmotion // 廣播
+		- SeatID    int // 座位 ID
+		- EmotionID int // 情緒 ID
