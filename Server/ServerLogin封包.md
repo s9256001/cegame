@@ -37,11 +37,13 @@ Server Login 封包
 		- Result       int
 		- PlayerInfo   SPlayerInfo
 	- LbtoCLoginLobby
-		- Result    int
-		- UserID    string
-		- NickName  string
-		- Money     int64
-		- FreeMoney int64
+		- Result          int
+		- UserID          string
+		- NickName        string
+		- Money           int64
+		- FreeMoney       int64
+		- ImageTemplateID int
+		- ImageCustomID   string
 0. **登出**
 	- CtoLbLogout
 	- LbtoCLogout
