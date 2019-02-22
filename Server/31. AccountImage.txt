@@ -1,0 +1,19 @@
+@startuml
+
+actor Client
+control LobbyServer
+control APIServer
+
+autonumber 1
+Client -> LobbyServer: CtoLbEditAccountImage
+LobbyServer -> Client: LbtoCEditAccountImage\n回應修改資料結果, 判斷是否需要上傳圖片
+Client -> APIServer: game/upload_account_image\n上傳圖片
+APIServer -> Client: 回應上傳圖片結果
+... ...
+autonumber 1
+Client -> LobbyServer: CtoLbGetAccountImage
+LobbyServer -> Client: LbtoCGetAccountImage\n取得ImageCustomID, 判斷是是否需要取得圖片
+Client -> APIServer: game/account_images\n取得圖片
+APIServer -> Client: 回應取得圖片結果
+
+@enduml

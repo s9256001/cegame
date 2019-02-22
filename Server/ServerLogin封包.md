@@ -56,14 +56,20 @@ Server Login 封包
 	- CtoLRegisterAccount
 		- Account  string
 		- Password string
+		- UserID   string // 非空字串, 表示綁定試玩帳號
 	- LtoDRegisterAccount
 		- ClientPeerID uint32
 		- Account      string
 		- Password     string
+		- UserID       string
 	- DtoLRegisterAccount
 		- ClientPeerID uint32
 		- Result       int
 		- Account      string
 		- Password     string
+		- UserID       string
 	- LtoCRegisterAccount
 		- Result int
+		- Account  string
+		- Password string
+		- UserID   string
