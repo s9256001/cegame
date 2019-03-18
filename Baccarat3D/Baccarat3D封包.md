@@ -2,14 +2,16 @@ Baccarat3D 封包
 =========================
 0. **初始資訊**
 	- SSeatInfo
-		- SeatID          int                               // 座位 ID
-		- AccountID       uint32                            // 帳號 ID
-		- NickName        string                            // 玩家的暱稱
-		- Money           int64                             // 玩家的錢
-		- FreeMoney       int64                             // 玩家的免費錢
-		- ImageTemplateID int                               // 樣板圖片 ID
-		- ImageCustomID   string                            // 自訂圖片 ID
-		- Bets            [baccaratmathpkg.BetTypeNum]int64 // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
+		- SeatID          		 int                               // 座位 ID
+		- AccountID       		 uint32                            // 帳號 ID
+		- NickName        		 string                            // 玩家的暱稱
+		- Money           		 int64                             // 玩家的錢
+		- FreeMoney       		 int64                             // 玩家的免費錢
+		- ImageTemplateID 		 int                               // 樣板圖片 ID
+		- ImageCustomID   		 string                            // 自訂圖片 ID
+		- Bets            		 [baccaratmathpkg.BetTypeNum]int64 // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
+		- PlayerWinBetUpdateTime int64                             // 下注閒家贏的最近 server 時間 (由 1970/1/1 開始算的毫秒數)
+		- BankerWinBetUpdateTime int64                             // 下注莊家贏的最近 server 時間 (由 1970/1/1 開始算的毫秒數)
 	- GtoCBaccarat3DInit
 		- BetRoundCount int // 押注輪次 (1-based)
 		- RoundCode string // 局號
@@ -45,9 +47,11 @@ Baccarat3D 封包
 	- CtoGBaccarat3DBet
 		- Bets [5]int64 // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
 	- GtoCBaccarat3DBet // 成功則廣播
-		- Bets [5]int64 // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
-		- SeatID int // 座位 ID
-		- Result int // 結果
+		- Bets                   [baccaratmathpkg.BetTypeNum]int64 // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
+		- PlayerWinBetUpdateTime int64                             // 下注閒家贏的最近 server 時間 (由 1970/1/1 開始算的毫秒數)
+		- BankerWinBetUpdateTime int64                             // 下注莊家贏的最近 server 時間 (由 1970/1/1 開始算的毫秒數)
+		- SeatID                 int                               // 座位 ID
+		- Result                 int                               // 結果
 0. **確認押注**
 	- CtoGBaccarat3DConfirmBet
 0. **開始發牌**
