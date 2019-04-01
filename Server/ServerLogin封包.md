@@ -16,10 +16,12 @@ Server Login 封包
 		- ClientPeerID uint32
 		- Result       int
 		- AccountID    uint32
+		- UserID       string
 		- Token        string
 	- LtoCLogin
 		- Result             int
 		- AccountID          uint32
+		- UserID             string
 		- Token              string
 		- LobbyServerAddress string
 0. **登入大廳**
