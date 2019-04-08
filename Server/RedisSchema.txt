@@ -1,0 +1,12 @@
+@startuml
+
+object "playerCount:lobby" as playerCountlobby
+playerCountlobby : {lobbyID} : 玩家人數
+
+object "playerCount:gameServer" as playerCountGameServer
+playerCountGameServer : {serverID} : 玩家人數
+
+object "playerCount:game" as playerCountGame
+playerCountGame : {gameID} : 玩家人數
+
+@enduml
