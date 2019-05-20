@@ -3,6 +3,7 @@ Server Account 封包
 0. **編輯帳號圖像**
 	- CtoLbEditAccountImage
 		- ImageTemplateID int
+		- ImageCustomID string
 	- LbtoDEditAccountImage
 		- ClientPeerID    uint32
 		- AccountID       uint32
