@@ -10,14 +10,16 @@ Server Account 封包
 		- ImageTemplateID int
 		- ImageCustomID   string
 	- DtoLbEditAccountImage
-		- ClientPeerID    uint32
-		- ImageTemplateID int
-		- ImageCustomID   string
-		- Result          int
+		- ClientPeerID      uint32
+		- ImageTemplateID   int
+		- ImageCustomID     string
+		- ImageLastCustomID string
+		- Result            int
 	- LbtoCEditAccountImage
-		- Result          int
-		- ImageTemplateID int
-		- ImageCustomID   string
+		- Result            int
+		- ImageTemplateID   int
+		- ImageCustomID     string
+		- ImageLastCustomID string
 0. **取得帳號圖像**
 	- CtoLbGetAccountImage
 		- AccountID       uint32

@@ -9,6 +9,7 @@ Baccarat3D 封包
 		- FreeMoney       		 int64                             // 玩家的免費錢
 		- ImageTemplateID 		 int                               // 樣板圖片 ID
 		- ImageCustomID   		 string                            // 自訂圖片 ID
+		- ImageLastCustomID      string                            // 上次的自訂圖片 ID
 		- Bets            		 [baccaratmathpkg.BetTypeNum]int64 // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
 		- PlayerWinBetUpdateTime int64                             // 下注閒家贏的最近 server 時間 (由 1970/1/1 開始算的毫秒數)
 		- BankerWinBetUpdateTime int64                             // 下注莊家贏的最近 server 時間 (由 1970/1/1 開始算的毫秒數)
