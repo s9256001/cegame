@@ -1,0 +1,17 @@
+@startuml
+
+actor Client
+control LobbyServer
+control DataServer
+control GameServer
+
+autonumber 1
+Client -> LobbyServer: CtoLbRentRoom
+LobbyServer -> DataServer: LbtoDRentRoom
+DataServer -> GameServer: DtoGRentRoom\n通知遊戲有人租用, 之後輸贏算桌主的
+DataServer -> LobbyServer: DtoLbRentRoom
+LobbyServer -> Client: LbtoCRentRoom
+... ...
+GameServer -> Client: GtoCRentRoomInfo
+
+@enduml

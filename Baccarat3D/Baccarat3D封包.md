@@ -44,6 +44,7 @@ Baccarat3D 封包
 		- RoundCode string // 局號
 		- ServerTime int64 // server 時間 (由 1970/1/1 開始算的毫秒數)
 		- ShoeLen int // 靴剩餘張數
+		- WaitBetSecs int // 等待押注秒數
 0. **發送押注**
 	- CtoGBaccarat3DBet
 		- Bets [5]int64 // 押注, 索引分別為 0: 閒, 1: 莊, 2: 和, 3: 閒對, 4: 莊對
