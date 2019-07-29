@@ -1,0 +1,10 @@
+@startuml
+
+actor Client
+control LobbyServer
+
+autonumber 1
+Client -> LobbyServer: CtoLbRentRoomGetRentedList
+LobbyServer -> Client: LbtoCRentRoomGetRentedList
+
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+
+actor Client
+control LobbyServer
+control DataServer
+control GameServer
+
+autonumber 1
+Client -> LobbyServer: CtoLbRentRoomCancel
+LobbyServer -> DataServer: LbtoDRentRoomCancel
+DataServer -> GameServer: DtoGRentRoomCancel\n通知遊戲取消租用
+DataServer -> LobbyServer: DtoLbRentRoomCancel
+LobbyServer -> Client: LbtoCRentRoomCancel
+... ...
+GameServer -> DataServer: GtoDRentRoomEnd\n租約結束
+GameServer -> Client: GtoCRentRoomInfo\n通知玩家租約結束, 之後輸贏算公司的
+DataServer -> LobbyServer: DtoLbRentRoomEnd\n通知大廳租約結束, 更新租桌快取資訊
+
+@enduml
+
+	
+	
+	
+	
+	

@@ -1,24 +1,24 @@
 @startuml
 
-Idle : 閒置
+Idle : 閒置\n判斷租桌結束
 RoundStart : 一靴開始, 遞增 RoundCount, 洗牌
 BetRoundStart : 押注輪開始, 遞增 BetRoundCount
 Bet : 等待玩家押注\n此時離開投注還沒有計算
-Deal : 發閒莊兩張牌\n起始一小段時間仍然接受押注\n時間到扣除押注的錢\n此時才真正投注成功
+Deal : 發閒莊兩張牌\n起始一小段時間仍然接受押注\n時間到扣除押注的錢\n此時才真正投注成功\n由租桌是否啟用, 判斷輸贏算公司還是桌主的
 PlayerDealPost : 閒發牌後處理, 咪牌或開牌
 BankerDealPost : 莊發牌後處理, 咪牌或開牌
 PlayerCall : 閒補牌\n若荷官咪牌則開牌
 PlayerCallPost : 閒補牌後處理, 咪牌與開牌表演
 BankerCall : 莊補牌\n若荷官咪牌則開牌
 BankerCallPost : 莊補牌後處理, 咪牌與開牌表演
-Settle : 結算
+Settle : 結算\n由租桌是否啟用, 判斷輸贏算公司還是桌主的\n判斷租桌結束
 RoundEnd : 一靴結束
 
 [*] --> Idle : 初始
 Idle --> RoundStart : 玩家進來\n已到靴尾 or BetRoundCount == 0 表示新的一靴
 Idle --> BetRoundStart : 玩家進來\nBetRoundCount > 0 表示不是新的一靴
 RoundStart --> BetRoundStart : 新的一靴初始結束
-BetRoundStart --> Bet : 押注輪初始結束
+BetRoundStart --> Bet : 押注輪初始結束\n判斷啟用租桌, 後續輸贏算桌主的
 Bet --> Idle : 押注時間到或都已確認, 沒有玩家\n遞減 BetRoundCount, BetRoundCount == 0 時, 遞減 RoundCount
 Bet --> Deal : 押注時間到或都已確認, 有玩家
 Deal --> PlayerDealPost : 發牌結束

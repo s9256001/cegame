@@ -12,6 +12,12 @@ DataServer -> GameServer: DtoGRentRoom\n通知遊戲有人租用, 之後輸贏�
 DataServer -> LobbyServer: DtoLbRentRoom
 LobbyServer -> Client: LbtoCRentRoom
 ... ...
-GameServer -> Client: GtoCRentRoomInfo
+GameServer -> Client: GtoCRentRoomInfo\n通知玩家遊戲有人租用, 之後輸贏算桌主的
+... ...
+GameServer -> DataServer: GtoDRentRoomActivate\n租桌已經啟用, 之後輸贏算桌主的
+... ...
+GameServer -> DataServer: GtoDRentRoomEnd\n租約結束
+GameServer -> Client: GtoCRentRoomInfo\n通知玩家租約結束, 之後輸贏算公司的
+DataServer -> LobbyServer: DtoLbRentRoomEnd\n通知大廳租約結束, 更新租桌快取資訊
 
 @enduml

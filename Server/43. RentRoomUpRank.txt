@@ -1,0 +1,13 @@
+@startuml
+
+actor Client
+control LobbyServer
+control DataServer
+
+autonumber 1
+Client -> LobbyServer: CtoLbRentRoomUpRank
+LobbyServer -> DataServer: LbtoDRentRoomUpRank
+DataServer -> LobbyServer: DtoLbRentRoomUpRank
+LobbyServer -> Client: LbtoCRentRoomUpRank
+
+@enduml
