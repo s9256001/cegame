@@ -3,11 +3,13 @@
 actor Client
 control LobbyServer
 control GameServer
+control DataServer
 
 autonumber 1
 Client -> GameServer: CtoGLeaveGame
 GameServer -> Client: GtoCLeaveGame
 ... ...
+GameServer -> DataServer: GtoDLeaveGameOK
 GameServer -> LobbyServer: GtoLbLeaveGameOK
 GameServer -> Client: 切斷連線
 ... ...

@@ -41,6 +41,21 @@ Server Game Common 封包
 		- RoomID       int
 		- SeatID       int
 		- Result       int
+	- GtoDJoinGame
+		- ClientPeerID uint32
+		- AccountID    uint32
+		- GameID       int
+		- GameLevel    int
+		- RoomID       int
+		- SeatID       int
+	- DtoGJoinGame
+		- ClientPeerID uint32
+		- AccountID    uint32
+		- GameID       int
+		- GameLevel    int
+		- RoomID       int
+		- SeatID       int
+		- Result       int
 		- PlayerInfo   SPlayerInfo
 	- GtoCJoinGame
 		- GameID       int
@@ -61,6 +76,12 @@ Server Game Common 封包
 	- CtoGLeaveGame
 	- GtoCLeaveGame
 		- Result int
+	- GtoDLeaveGameOK
+		- AccountID uint32
+		- GameID    int
+		- GameLevel int
+		- RoomID    int
+		- SeatID    int
 	- GtoLbLeaveGameOK
 		- AccountID uint32
 		- GameID    int

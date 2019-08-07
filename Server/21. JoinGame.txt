@@ -3,6 +3,7 @@
 actor Client
 control LobbyServer
 control GameServer
+control DataServer
 
 autonumber 1
 Client -> LobbyServer: CtoLbJoinGame
@@ -10,6 +11,8 @@ LobbyServer -> Client: LbtoCJoinGame\n發送 token\n此 token 有時效性\n若�
 Client -> GameServer: CtoGJoinGame
 GameServer -> LobbyServer: GtoLbJoinGame\n驗證 token 是否有效
 LobbyServer -> GameServer: LbtoGJoinGame
+GameServer -> DataServer: GtoDJoinGame
+DataServer -> GameServer: DtoGJoinGame
 GameServer -> Client: GtoCJoinGame
 ... ...
 GameServer -> LobbyServer: GtoLbJoinGameOK
