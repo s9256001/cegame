@@ -6,12 +6,14 @@ Server Login 封包
 		- Account     string // AccountTypeAccount 使用
 		- Password    string // AccountTypeAccount 使用
 		- UserID      string // AccountTypeUserID 使用, 空字串表示由 server 自動建立試玩帳號
+		- PlatformKey string
 	- LtoDLogin
 		- ClientPeerID uint32
 		- AccountType  int
 		- Account      string
 		- Password     string
 		- UserID       string
+		- PlatformKey  string
 	- DtoLLogin
 		- ClientPeerID uint32
 		- Result       int
