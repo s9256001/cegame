@@ -1,5 +1,13 @@
 Baccarat3D 封包
 =========================
+0. **局開始**
+	- GtoDRoundStart
+		- GameID    int
+		- GameLevel int
+	- DtoGRoundStart
+		- GameID    int
+		- GameLevel int
+		- RoundCode string
 0. **押注**
 	- SServerBetRequest
 		- ClientPeerID uint32
@@ -7,10 +15,12 @@ Baccarat3D 封包
 		- Bet          int64
 		- Detail       string
 	- GtoDBet
-		- GameID    int
-		- GameLevel int
-		- RoundCode string
-		- Bets      []SServerBetRequest
+		- GameID      int
+		- GameLevel   int
+		- RoomID      int
+		- RoundCode   string
+		- DBRoundCode string
+		- Bets        []SServerBetRequest
 	- SServerBetResult
 		- ClientPeerID uint32
 		- AccountID    uint32
@@ -18,10 +28,13 @@ Baccarat3D 封包
 		- BetID        uint64
 		- Money        int64
 	- DtoGBet
-		- GameID    int
-		- GameLevel int
-		- RoundCode string
-		- Bets      []SServerBetResult
+		- GameID      int
+		- GameLevel   int
+		- RoomID      int
+		- RoundCode   string
+		- DBRoundCode string
+		- Bets        []SServerBetResult
+		- RoomMoney   int64
 0. **結算**
 	- SServerSettleRequest
 		- ClientPeerID uint32
