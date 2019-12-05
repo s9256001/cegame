@@ -12,6 +12,7 @@ Baccarat3D 封包
 	- SServerBetRequest
 		- ClientPeerID uint32
 		- AccountID    uint32
+		- ValidBet     int64
 		- Bet          int64
 		- Detail       string
 	- GtoDBet
@@ -43,10 +44,12 @@ Baccarat3D 封包
 		- Win          int64
 		- Detail       string
 	- GtoDSettle
-		- GameID    int
-		- GameLevel int
-		- RoundCode string
-		- Settles   []SServerSettleRequest
+		- GameID      int
+		- GameLevel   int
+		- RoomID      int
+		- RoundCode   string
+		- DBRoundCode string
+		- Settles     []SServerSettleRequest
 	- SServerSettleResult
 		- ClientPeerID uint32
 		- AccountID    uint32
@@ -55,8 +58,11 @@ Baccarat3D 封包
 	- DtoGSettle
 		- GameID                    int
 		- GameLevel                 int
+		- RoomID                    int
 		- RoundCode                 string
+		- DBRoundCode               string
 		- Settles                   []SServerSettleResult
+		- RoomMoney                 int64
 		- TotalWin                  int64
 		- TotalMonthlyWin           int64
 		- TotalMonthlyWinCreateTime time.Time
