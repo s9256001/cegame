@@ -127,3 +127,9 @@ Baccarat3D 封包
 	- GtoCBaccarat3DEmotion // 廣播
 		- SeatID    int // 座位 ID
 		- EmotionID int // 情緒 ID
+0. **Demo**
+	- CtoGBaccarat3DDemo
+		- ShoeTailNum int   // 靴尾個數
+		- SetCardIDs  []int // 設定牌 ID 列表
+	- GtoCBaccarat3DDemo
+		- Result int // 結果
