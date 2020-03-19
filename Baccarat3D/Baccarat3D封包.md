@@ -14,6 +14,7 @@ Baccarat3D 封包
 		- PlayerWinBetUpdateTime int64                             // 下注閒家贏的最近 server 時間 (由 1970/1/1 開始算的毫秒數)
 		- BankerWinBetUpdateTime int64                             // 下注莊家贏的最近 server 時間 (由 1970/1/1 開始算的毫秒數)
 	- GtoCBaccarat3DInit
+		- GameType int // 遊戲類型; 0: 標準, 1: 免佣
 		- BetRoundCount int // 押注輪次 (1-based)
 		- RoundCode string // 局號
 		- ShoeLen int // 靴剩餘張數
