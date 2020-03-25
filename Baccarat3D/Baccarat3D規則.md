@@ -68,25 +68,5 @@ Baccarat3D 規則
 	- [百家樂簡介](http://www.duchang888.com/introduce.htm)
 	- [Baccarat](https://www.britannica.com/topic/baccarat-card-game)
 	- [Learn to Play Baccarat](https://www.star.com.au/sydney/casino/table-games/baccarat)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	- [免佣百家樂] (https://iboyi66.com/%E5%85%8D%E4%BD%A3%E7%99%BE%E5%AE%B6%E6%A8%82%EF%BD%9C%E5%85%A5%E9%96%80%E7%8E%A9%E6%B3%95%E6%95%99%E5%AD%B8/)
+	- [玩家討論無傭百家樂的風險與收益] (http://lovingwon.com/article/7969.html)
