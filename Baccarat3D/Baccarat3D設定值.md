@@ -1,0 +1,56 @@
+Baccarat3D 設定值
+=========================
+0. **設定值**
+	- WaitBetMSecs                int
+		- 等待玩家下注的秒數
+	- DealAllowBetMSecs           int
+		- 下注時間結束後, 後端仍然保有一些時間允許接收玩家下注的秒數
+	- WaitTailShowSecs            int
+		- 發牌或補牌時, 若看到標示靴尾的紅牌, 前端表演 "收紅牌" 的秒數
+	- WaitDealMSecs               int
+		- 前端表演 "發牌" 的秒數
+	- WaitPlayerDealPeekMSecs     int
+		- 發完牌後處理 "玩家" 咪牌, 若有玩家有咪牌權, 後端等待玩家咪牌的秒數
+	- WaitPlayerDealPeekShowMSecs int
+		- 發完牌後處理 "玩家" 咪牌, 若有玩家有咪牌權, 玩家咪牌結束時, 前端表演 "開牌" 的秒數
+	- WaitPlayerDealOpenMSecs     int
+		- 發完牌後處理 "玩家" 咪牌, 若沒有玩家有咪牌權, 前端表演 "開牌" 的秒數
+	- WaitBankerDealPeekMSecs     int
+		- 發完牌後處理 "莊家" 咪牌, 若有玩家有咪牌權, 後端等待玩家咪牌的秒數
+	- WaitBankerDealPeekShowMSecs int
+		- 發完牌後處理 "莊家" 咪牌, 若有玩家有咪牌權, 玩家咪牌結束時, 前端表演 "開牌" 的秒數
+	- WaitBankerDealOpenMSecs     int
+		- 發完牌後處理 "莊家" 咪牌, 若沒有玩家有咪牌權, 前端表演 "開牌" 的秒數
+	- WaitPlayerCallMSecs         int
+		- "玩家" 補牌時, 前端表演 "發補牌" 的秒數
+	- WaitBankerCallMSecs         int
+		- "莊家" 補牌時, 前端表演 "發補牌" 的秒數
+	- WaitPlayerCallPeekMSecs     int
+		- "玩家" 補牌時, 若有玩家有咪牌權, 後端等待玩家咪牌的秒數
+	- WaitPlayerCallPeekShowMSecs int
+		- "玩家" 補牌時, 若有玩家有咪牌權, 玩家咪牌結束時, 前端表演 "開牌" 的秒數
+	- WaitPlayerCallOpenMSecs     int
+		- "玩家" 補牌時, 若沒有玩家有咪牌權, 前端表演 "開牌" 的秒數
+	- WaitBankerCallPeekMSecs     int
+		- "莊家" 補牌時, 若有玩家有咪牌權, 後端等待玩家咪牌的秒數
+	- WaitBankerCallPeekShowMSecs int
+		- "莊家" 補牌時, 若有玩家有咪牌權, 玩家咪牌結束時, 前端表演 "開牌" 的秒數
+	- WaitBankerCallOpenMSecs     int
+		- "莊家" 補牌時, 若沒有玩家有咪牌權, 前端表演 "開牌" 的秒數
+	- WaitSettleMSecs             int
+		- 前端表演 "結算" 的基本秒數
+	- WaitSettleWinBetMSecs       [baccaratmathpkg.BetTypeNum]int
+		- 前端表演 "某一區結果為贏結算" 的秒數
+	- WaitSettleLoseBetMSecs      [baccaratmathpkg.BetTypeNum]int
+		- 前端表演 "某一區結果為輸結算" 的秒數
+	- WaitRoundEndMSecs           int
+		- 前端表演 "一靴結束" 的秒數
+	- MinShoeTailNum              int
+		- 靴尾位置由一靴牌的剩餘張數做標記, 此為靴尾位置的最小張數
+	- MaxShoeTailNum              int
+		- 靴尾位置由一靴牌的剩餘張數做標記, 此為靴尾位置的最大張數
+	- GameType int
+		- 0: 一般
+		- 1: 免佣
+	- SetCardIDs []int
+		- 測試用, 可以設定接下來要發的牌的 ID
